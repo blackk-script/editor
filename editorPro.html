@@ -114,7 +114,7 @@
                     <span id="copytoggle"><a onClick="copyHTML();">Copy<span class="smallmenu">Ctrl+C</span></a></span>
                     <hr>
                     <a class="run" title="Compile" id="runbtn" onclick=" compileAll();" >Compile</a>
-	           <a class=""><label for="blackscript">Auto Compile<input type="checkbox" id="blackscript"></label></a>
+	           <a class="blacksc"><label for="blackscript" style="cursor:pointer;">Auto Compile<input type="checkbox" id="blackscript"></label></a>
                 </span>
     </div>
 </div>
@@ -782,11 +782,17 @@ function updatePreview3() {
 setTimeout(updatePreview3, 300);
 	
 	
-       var blackscript = document.querySelector('#blackscript');
+       var  blackscript = document.querySelector('#blackscript');
+	var blacksc = document.querySelector('.blacksc');
 	setInterval(function(){
 		if(blackscript.checked){
 		  compileAll();
+		  blacksc.style.color='green';
 		}
+		else{
+		  blacksc.style.color='red';
+		}
+			
 	}, 1000);
     
 
